@@ -16,7 +16,7 @@ def gethash():
     req = requests.get(url)
     favicon = base64.b64encode(req.content)
     hash = mmh3.hash(favicon)
-    return jsonify({"http.favicon.hash": str(hash)})
+    return "http.favicon.hash:" + str(hash)
     
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
