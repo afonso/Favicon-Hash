@@ -14,7 +14,7 @@ def main():
 def gethash():
     url = request.args.get('favicon') 
     req = requests.get(url)
-    favicon = base64.b64encode(req.text)
+    favicon = base64.b64encode(req.content).decode('ascii')
     hash = mmh3.hash(favicon)
     return "http.favicon.hash:" + str(hash)
     
