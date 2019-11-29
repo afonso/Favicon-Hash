@@ -1,4 +1,4 @@
-import os, mmh3, sys, requests
+import os, mmh3, sys, requests, base64
 from flask import Flask, jsonify, request
 
 
@@ -14,7 +14,7 @@ def main():
 def gethash():
     url = request.args.get('favicon') 
     req = requests.get(url)
-    favicon = req.content.encode('base64')
+    favicon = base64.b64encode(req.content)
     hash = mmh3.hash(favicon)
     return jsonfy({"http.favicon.hash": str(hash)})
     
