@@ -6,8 +6,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
-    if request.headers.get('Authorization') == '42':
-        return jsonify({"42": "a resposta para a vida, o universo e tudo mais"})
     return jsonify({"usage": "/get?favicon=url.com/fav.ico"})
 
 @app.route('/get')
