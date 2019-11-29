@@ -1,7 +1,6 @@
 import os, mmh3, sys, requests, base64
 from flask import Flask, jsonify, request
 
-
 app = Flask(__name__)
 
 @app.route('/')
