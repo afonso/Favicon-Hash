@@ -10,7 +10,7 @@ def main():
 @app.route('/get')
 def gethash():
     url = request.args.get('favicon') 
-    req = requests.get(url)
+    req = requests.get(url, verify=False)
     favicon = base64.encodebytes(req.content)
     hash = mmh3.hash(favicon)
     return "http.favicon.hash:" + str(hash)
