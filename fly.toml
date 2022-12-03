@@ -1,12 +1,7 @@
-# fly.toml file generated for favhash on 2022-12-03T01:58:38Z
-
 app = "favhash"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
-
-[build]
-  image = "afonso/favhash:latest"
 
 [env]
 
