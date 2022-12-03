@@ -1,6 +1,9 @@
 FROM --platform=linux/amd64 python:3
-ADD main.py /
-ADD requirements.txt /
-RUN pip install --upgrade pip
+
+ADD . app/
+
+WORKDIR app/
+
 RUN pip install -r requirements.txt
-CMD [ "python", "./main.py" ]
+
+CMD [ "python", "main.py" ]
