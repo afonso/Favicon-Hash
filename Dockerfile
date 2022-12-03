@@ -1,4 +1,4 @@
-FROM --plataform=linux/amd64 python:3
+FROM --platform=linux/amd64 python:3
 ADD main.py /
 ADD requirements.txt /
 RUN pip install --upgrade pip
